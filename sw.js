@@ -1,5 +1,5 @@
-const CACHE = 'micro-motion-tracker-v1';
-const ASSETS = ['./', './index.html', './manifest.webmanifest', './icon.svg'];
+const CACHE = 'micro-motion-tracker-v2';
+const ASSETS = ['./', './index.html', './manifest.webmanifest', './icon.svg', './sw.js'];
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
 });

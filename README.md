@@ -10,6 +10,13 @@ It runs fully in the browser using `navigator.mediaDevices.getUserMedia()`, `<ca
 
 Upload this folder to any HTTPS static host such as GitHub Pages, Netlify, Cloudflare Pages, or your own HTTPS server. Open the URL in Android Chrome and tap **Start camera**.
 
+#### GitHub Pages setup
+
+1. Push the repository to GitHub.
+2. In **Settings → Pages**, set **Source** to **GitHub Actions**.
+3. Push to `main` or run the **Deploy static site to Pages** workflow manually.
+4. Open the published Pages URL over HTTPS and tap **Start camera**.
+
 ### Option B — Run locally on the phone with Termux
 
 1. Install Termux from F-Droid.
