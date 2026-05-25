@@ -13,9 +13,10 @@ Upload this folder to any HTTPS static host such as GitHub Pages, Netlify, Cloud
 #### GitHub Pages setup
 
 1. Push the repository to GitHub.
-2. In **Settings → Pages**, set **Source** to **GitHub Actions**.
-3. Push to `main` or run the **Deploy static site to Pages** workflow manually.
-4. Open the published Pages URL over HTTPS and tap **Start camera**.
+2. In **Settings → Pages**, either set **Source** to **GitHub Actions** once, or add a `PAGES_DEPLOY_TOKEN` repository secret so the workflow can enable Pages on first run.
+3. If you use `PAGES_DEPLOY_TOKEN`, use a token that can manage Pages configuration for the repository.
+4. Push to `main` or run the **Deploy static site to Pages** workflow manually.
+5. Open the published Pages URL over HTTPS and tap **Start camera**.
 
 ### Option B — Run locally on the phone with Termux
 
