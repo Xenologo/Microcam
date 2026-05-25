@@ -25,8 +25,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Note bootstrap requirements
+        if: ${{ secrets.PAGES_DEPLOY_TOKEN == '' }}
+        run: echo "::notice::Using GITHUB_TOKEN for Pages deploy. If this repository has never had Pages enabled, first set Settings > Pages > Source to GitHub Actions or add a PAGES_DEPLOY_TOKEN secret so the workflow can enable Pages automatically."
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
+        with:
+          token: ${{ secrets.PAGES_DEPLOY_TOKEN != '' && secrets.PAGES_DEPLOY_TOKEN || github.token }}
+          enablement: ${{ secrets.PAGES_DEPLOY_TOKEN != '' }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
